@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<CFX xmlns="http://ftzmis.com/test">
+  <HEAD>
+    <VER>1.0</VER>
+    <SRC>102100009980</SRC>
+    <DES>100000000000中文</DES>
+  </HEAD>
+  <MSG>
+    <FTZ210101>
+      <BATCH>
+        <AccountNo>4312121212133</AccountNo>
+        <AccountName>账户1</AccountName>
+        <Balance>121212121.12</Balance>
+      </BATCH>
+      <TRANLIST>
+        <TRAN>
+          <SeqNo>01</SeqNo>
+          <Amount>200.00</Amount>
+        </TRAN>
+      </TRANLIST>
+    </FTZ210101>
+  </MSG>
+</CFX>

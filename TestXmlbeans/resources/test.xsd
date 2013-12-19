@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://ftzmis.com/test"
+	elementFormDefault="qualified" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://ftzmis.com/test">
+	<xs:element name="CFX">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="HEAD" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="VER" type="xs:string" />
+							<xs:element name="SRC" type="xs:string" />
+							<xs:element name="DES" type="xs:string" />
+							<xs:element name="APP" type="xs:string" />
+							<xs:element name="MsgNo" type="xs:string" />
+							<xs:element name="MsgID" type="xs:string" />
+							<xs:element name="MsgRef" type="xs:string" />
+							<xs:element name="WorkDate" type="xs:string" />
+							<xs:element name="EditFlag" type="xs:string" />
+							<xs:element name="Reserve" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="MSG" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FTZ210101" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="BATCH" minOccurs="1" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="AccountNo" type="xs:string" />
+													<xs:element name="AccountName" type="xs:string" />
+													<xs:element name="AccType" type="xs:string" />
+													<xs:element name="SubAccountNo" type="xs:string" />
+													<xs:element name="DepositRate" type="xs:string" />
+													<xs:element name="CustomType" type="xs:string" />
+													<xs:element name="BalanceCode" type="xs:string" />
+													<xs:element name="DocumentType" type="xs:string" />
+													<xs:element name="DocumentNo" type="xs:string" />
+													<xs:element name="Currency" type="xs:string" />
+													<xs:element name="Balance" type="xs:string" />
+													<xs:element name="SubmitDate" type="xs:string" />
+													<xs:element name="TotalCount" type="xs:string" />
+													<xs:element name="AccOrgCode" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="TRANLIST" minOccurs="1"
+											maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="TRAN" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="SeqNo" type="xs:string" />
+																<xs:element name="CDFlag" type="xs:string" />
+																<xs:element name="TranDate" type="xs:string" />
+																<xs:element name="OrgTranDate" type="xs:string" />
+																<xs:element name="Amount" type="xs:string" />
+																<xs:element name="OppAccount" type="xs:string" />
+																<xs:element name="OppName" type="xs:string" />
+																<xs:element name="OppBankCode" type="xs:string" />
+																<xs:element name="CountryCode" type="xs:string" />
+																<xs:element name="DistrictCode" type="xs:string" />
+																<xs:element name="TranType" type="xs:string" />
+																<xs:element name="TermLength" type="xs:string" />
+																<xs:element name="TermUnit" type="xs:string" />
+																<xs:element name="ExpireDate" type="xs:string" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
