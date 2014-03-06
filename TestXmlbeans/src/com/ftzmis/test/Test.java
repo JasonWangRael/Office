@@ -1,16 +1,8 @@
 package com.ftzmis.test;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStreamWriter;
-
-import javax.xml.namespace.QName;
-
 import org.apache.xmlbeans.XmlCursor;
-import org.apache.xmlbeans.XmlDocumentProperties;
 import org.apache.xmlbeans.XmlException;
 import org.apache.xmlbeans.XmlOptions;
 
@@ -82,7 +74,11 @@ public class Test {
 			bf.close();*/
 			
 			
-		} catch (XmlException | IOException e) {
+		} catch (XmlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
