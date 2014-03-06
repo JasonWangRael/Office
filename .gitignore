@@ -1,5 +1,8 @@
 *.class
-
+.metadata
+.gradle
+bin/
+tmp/
 # Package Files #
 *.war
 *.ear
