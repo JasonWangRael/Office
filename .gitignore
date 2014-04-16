@@ -1,7 +1,10 @@
 *.class
 .metadata
 .gradle
+.settings
 bin/
+gen/
+assets/
 tmp/
 # Package Files #
 *.war

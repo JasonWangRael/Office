@@ -4,7 +4,6 @@
 package com.jason.office;
 
 import java.awt.Component;
-import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -38,7 +37,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class MainWindown {
 
-	private JFrame	frame;
+	private JFrame	frmGenamendhiscsvBy;
 	private JLabel lblNewLabel;
 	private JLabel label;
 	private JLabel lblNewLabel_1;
@@ -75,14 +74,14 @@ public class MainWindown {
 	 * @return the frame
 	 */
 	public JFrame getFrame() {
-		return frame;
+		return frmGenamendhiscsvBy;
 	}
 
 	/**
 	 * @param frame the frame to set
 	 */
 	public void setFrame(JFrame frame) {
-		this.frame = frame;
+		this.frmGenamendhiscsvBy = frame;
 	}
 
 
@@ -98,15 +97,16 @@ public class MainWindown {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 1330, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmGenamendhiscsvBy = new JFrame();
+		frmGenamendhiscsvBy.setTitle("GenAmendhisCSV  - by Jason.w");
+		frmGenamendhiscsvBy.setBounds(100, 100, 1330, 600);
+		frmGenamendhiscsvBy.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {115, 210, 215, 40, 75, 60, 40, 40, 535};
 		gridBagLayout.rowHeights = new int[] {40, 40, 440, 40};
 		gridBagLayout.columnWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 1.0, 0.0};
-		frame.getContentPane().setLayout(gridBagLayout);
+		frmGenamendhiscsvBy.getContentPane().setLayout(gridBagLayout);
 		
 		lblNewLabel = new JLabel("\u7248\u672c");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
@@ -116,7 +116,7 @@ public class MainWindown {
 		gbc_lblNewLabel.insets = new Insets(5, 10, 5, 5);
 		gbc_lblNewLabel.gridx = 0;
 		gbc_lblNewLabel.gridy = 0;
-		frame.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
+		frmGenamendhiscsvBy.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
 		
 		label = new JLabel("\u751f\u6548\u65e5\u671f");
 		label.setHorizontalAlignment(SwingConstants.LEFT);
@@ -125,7 +125,7 @@ public class MainWindown {
 		gbc_label.insets = new Insets(0, 0, 5, 5);
 		gbc_label.gridx = 1;
 		gbc_label.gridy = 0;
-		frame.getContentPane().add(label, gbc_label);
+		frmGenamendhiscsvBy.getContentPane().add(label, gbc_label);
 		
 		lblNewLabel_1 = new JLabel("\u9700\u6c42\u8bf4\u660e");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
@@ -135,7 +135,7 @@ public class MainWindown {
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_1.gridx = 2;
 		gbc_lblNewLabel_1.gridy = 0;
-		frame.getContentPane().add(lblNewLabel_1, gbc_lblNewLabel_1);
+		frmGenamendhiscsvBy.getContentPane().add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
 		label_1 = new JLabel("\u4fee\u6539\u7a0b\u5e8f\u4e3b\u76ee\u5f55");
 		label_1.setHorizontalAlignment(SwingConstants.LEFT);
@@ -144,7 +144,7 @@ public class MainWindown {
 		gbc_label_1.insets = new Insets(0, 0, 5, 0);
 		gbc_label_1.gridx = 8;
 		gbc_label_1.gridy = 0;
-		frame.getContentPane().add(label_1, gbc_label_1);
+		frmGenamendhiscsvBy.getContentPane().add(label_1, gbc_label_1);
 		
 		textFieldHeadVersion = new JTextField();
 		textFieldHeadVersion.setHorizontalAlignment(SwingConstants.LEFT);
@@ -153,7 +153,7 @@ public class MainWindown {
 		gbc_textFieldHeadVersion.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textFieldHeadVersion.gridx = 0;
 		gbc_textFieldHeadVersion.gridy = 1;
-		frame.getContentPane().add(textFieldHeadVersion, gbc_textFieldHeadVersion);
+		frmGenamendhiscsvBy.getContentPane().add(textFieldHeadVersion, gbc_textFieldHeadVersion);
 		textFieldHeadVersion.setColumns(10);
 		
 		textFieldHeadDate = new JTextField();
@@ -163,7 +163,7 @@ public class MainWindown {
 		gbc_textFieldHeadDate.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textFieldHeadDate.gridx = 1;
 		gbc_textFieldHeadDate.gridy = 1;
-		frame.getContentPane().add(textFieldHeadDate, gbc_textFieldHeadDate);
+		frmGenamendhiscsvBy.getContentPane().add(textFieldHeadDate, gbc_textFieldHeadDate);
 		textFieldHeadDate.setColumns(10);
 		
 		textFieldHeadDesc = new JTextField();
@@ -174,7 +174,7 @@ public class MainWindown {
 		gbc_textFieldHeadDesc.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textFieldHeadDesc.gridx = 2;
 		gbc_textFieldHeadDesc.gridy = 1;
-		frame.getContentPane().add(textFieldHeadDesc, gbc_textFieldHeadDesc);
+		frmGenamendhiscsvBy.getContentPane().add(textFieldHeadDesc, gbc_textFieldHeadDesc);
 		textFieldHeadDesc.setColumns(10);
 		
 		textFieldHeadDirectory = new JTextField();
@@ -184,7 +184,7 @@ public class MainWindown {
 		gbc_textFieldHeadDirectory.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textFieldHeadDirectory.gridx = 8;
 		gbc_textFieldHeadDirectory.gridy = 1;
-		frame.getContentPane().add(textFieldHeadDirectory, gbc_textFieldHeadDirectory);
+		frmGenamendhiscsvBy.getContentPane().add(textFieldHeadDirectory, gbc_textFieldHeadDirectory);
 		textFieldHeadDirectory.setColumns(10);
 		
 		scrollPane = new JScrollPane();
@@ -194,7 +194,7 @@ public class MainWindown {
 		gbc_scrollPane.fill = GridBagConstraints.BOTH;
 		gbc_scrollPane.gridx = 0;
 		gbc_scrollPane.gridy = 2;
-		frame.getContentPane().add(scrollPane, gbc_scrollPane);
+		frmGenamendhiscsvBy.getContentPane().add(scrollPane, gbc_scrollPane);
 		
 		table = new JTable();
 		table.setRowHeight(22);
@@ -325,7 +325,7 @@ public class MainWindown {
 		gbc_toolBar.insets = new Insets(0, 15, 0, 5);
 		gbc_toolBar.gridx = 0;
 		gbc_toolBar.gridy = 3;
-		frame.getContentPane().add(toolBar, gbc_toolBar);
+		frmGenamendhiscsvBy.getContentPane().add(toolBar, gbc_toolBar);
 		
 		btnAddRow = new JButton("Add Row");
 		btnAddRow.addMouseListener(new MouseAdapter() {
@@ -396,7 +396,7 @@ public class MainWindown {
 				lines.offer(titleLine_2);
 				
 				int count = table.getRowCount();
-				while(model.getValueAt(count - 1, 2).toString().isEmpty())
+				while(count > 0 && model.getValueAt(count - 1, 2).toString().isEmpty())
 					count--;
 				
 				for (int i = 0; i < count; i++) {
