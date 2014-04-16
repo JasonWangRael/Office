@@ -13,6 +13,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -21,6 +27,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -224,7 +231,48 @@ public class MainWindown {
 			new String[] {
 				"\u9700\u6C42\u7F16\u53F7", "\u5B50\u76EE\u5F55\u7A0B", "\u7A0B\u5E8F\u540D", "UPDTYPE", "REVIEW", "UPDBY", "COD", "TST", "\u4FEE\u6539\u8BF4\u660E"
 			}
-		));
+		)
+			{
+	
+				/**
+				 * 
+				 */
+				private static final long	serialVersionUID	= 1L;
+
+				/* 
+				 * @see javax.swing.table.DefaultTableModel#setValueAt(java.lang.Object, int, int)
+				 */
+				@Override
+				public void setValueAt(Object aValue, int row, int column) {
+					if (column == 3 || column == 4 || column == 5) {
+						aValue = aValue.toString().toUpperCase();
+					}
+					
+					if (column == 6 || column == 7) {
+						try {
+							double value = Double.parseDouble(aValue.toString());
+							
+							if (value < 0.00 || value > 100.00) {								
+								throw new RuntimeException();
+							}
+							
+							aValue = aValue.toString() + "%";
+						}
+						catch (NumberFormatException e) {
+							aValue = "";
+							JOptionPane.showMessageDialog(null, "Only Number(Withou %) Allowed!");
+						}
+						catch (RuntimeException e) {
+							aValue = "";
+							JOptionPane.showMessageDialog(null, "Input Number Out of Range(0-100)!");
+						}
+					}
+					
+					super.setValueAt(aValue, row, column);
+				}
+				
+			}
+		);
 		table.getColumnModel().getColumn(0).setResizable(false);
 		table.getColumnModel().getColumn(0).setPreferredWidth(115);
 		table.getColumnModel().getColumn(1).setResizable(false);
@@ -383,13 +431,27 @@ public class MainWindown {
 					lines.offer(line);
 				}
 				
-				while (!head.isEmpty()) {
-					System.out.println(head.poll().toString());
+				//Write to output rootpath/outfile.csv
+				try {
+					OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(textFieldHeadVersion.getText() + "_amendhis.csv"), "GBK");
+					writer.write("");
+					
+					while (!head.isEmpty())
+						writer.append(head.poll().toString() + "\n");
+					while (!lines.isEmpty())
+						writer.append(lines.poll().toString() + "\n");
+					
+					writer.append(headDel.toString() + "\n");
+					
+					writer.flush();
+					writer.close();
+					
+					JOptionPane.showMessageDialog(null, "Save To File:" + textFieldHeadVersion.getText() + "_amendhis.csv!");
 				}
-				while (!lines.isEmpty()) {
-					System.out.println(lines.poll().toString());
+				catch (IOException e1) {
+					JOptionPane.showMessageDialog(null, "Fail To Save File " + textFieldHeadVersion.getText() + "_amendhis.csv!");
+					e1.printStackTrace();
 				}
-				System.out.println(headDel.toString());
 			}
 		});
 		toolBar.add(btnGenCsv);
