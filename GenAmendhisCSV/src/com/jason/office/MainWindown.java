@@ -7,16 +7,12 @@ import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.HeadlessException;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.LinkedList;
@@ -36,8 +32,6 @@ import javax.swing.JToolBar;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
-
-import com.jason.office.ContentLine.DEL_TYPE;
 
 /**
  * 
@@ -78,22 +72,20 @@ public class MainWindown {
 	}
 
 	/**
-	 * Launch the application.
+	 * @return the frame
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainWindown window = new MainWindown();
-					//((DefaultTableModel)window.getTable().getModel());
-					window.frame.setVisible(true);
-				}
-				catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public JFrame getFrame() {
+		return frame;
 	}
+
+	/**
+	 * @param frame the frame to set
+	 */
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+
 
 	/**
 	 * Create the application.
@@ -211,13 +203,13 @@ public class MainWindown {
 		table.setSurrendersFocusOnKeystroke(true);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"A1", "A2", "A3", "A4", "A5", "A6", "50%", "50%", "A7"},
-				{"", "B2", "B3", "B4", "B5", "B6", "100%", "100%", "B7"},
-				{"", "", "C3", "C4", "C5", "C6", "50%", "50%", "C7"},
-				{"", "D2", "D3", "D4", "D5", "D6", "100%", "100%", "D7"},
-				{"E1", "E2", "E3", "E4", "E5", "E6", "", "", ""},
-				{"", "", "F3", "F4", "F5", "F6", "", "", ""},
-				{"", "", "G3", "G4", "G5", "G6", "", "", ""},
+				{"", "", "", "", "", "", "", "", ""},
+				{"", "", "", "", "", "", "", "", ""},
+				{"", "", "", "", "", "", "", "", ""},
+				{"", "", "", "", "", "", "", "", ""},
+				{"", "", "", "", "", "", "", "", ""},
+				{"", "", "", "", "", "", "", "", ""},
+				{"", "", "", "", "", "", "", "", ""},
 				{"", "", "", "", "", "", "", "", ""},
 				{"", "", "", "", "", "", "", "", ""},
 				{"", "", "", "", "", "", "", "", ""},
