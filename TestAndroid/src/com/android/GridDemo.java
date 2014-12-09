@@ -42,7 +42,7 @@ public class GridDemo extends Activity implements OnItemSelectedListener {
 		selection = (TextView) findViewById(R.id.selection);
 		GridView g = (GridView) findViewById(R.id.grid);
 		g.setAdapter(new FunnyLookingAdapter(this, 
-						android.R.layout.simple_list_item_1, items));
+						android.R.layout.simple_list_item_2, items));
 		g.setOnItemSelectedListener(this);
 	}
 	
