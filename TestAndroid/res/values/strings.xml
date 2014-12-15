@@ -6,5 +6,10 @@
     <string name="btn_ok">ok</string>
     <string name="btn_cancel">cancel</string>
     <string name="label_url">URL:</string>
+    <string name="btn_setdate">Set The Date</string>
+    <string name="btn_settime">Set The Time</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_stop">Stop</string>
+    <string name="btn_reset">Reset</string>
 
 </resources>
